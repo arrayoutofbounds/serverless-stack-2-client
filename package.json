@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "aws-amplify": "^1.1.38",
+    "eslint-utils": "1.4.1",
     "react": "^16.9.0",
     "react-bootstrap": "0.32.4",
     "react-dom": "^16.9.0",
@@ -16,10 +17,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },  
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "resolutions": { "eslint-utils": "^1.4.1" },
   "browserslist": {
     "production": [
       ">0.2%",
