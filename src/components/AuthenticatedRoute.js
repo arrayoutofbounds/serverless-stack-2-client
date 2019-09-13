@@ -6,7 +6,7 @@ export default ({ component: C, props: cProps, ...rest }) =>
     {...rest}
     render={props =>
       cProps.isAuthenticated
-        ? <C {...props} {...cProps} />
+        ? <C {...props} {...cProps} className="container"/>
         : <Redirect
             to={`/login?redirect=${props.location.pathname}${props.location
               .search}`}
