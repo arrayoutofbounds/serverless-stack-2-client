@@ -15,13 +15,13 @@ class App extends Component {
       isAuthenticating: true,
     };
   }
-  
+
   async componentDidMount() {
-    try{
+    try {
       await Auth.currentSession();
       this.userHasAuthenticated(true);
-    } catch(e){
-      if( e !== 'No current user'){ // only show errors that are not this
+    } catch (e) {
+      if (e !== 'No current user') { // only show errors that are not this
         alert(e);
       }
     }
@@ -41,7 +41,7 @@ class App extends Component {
 
     this.userHasAuthenticated(false);
     this.props.history.push("/login");
-  }  
+  }
 
   render() {
     const childProps = {
@@ -63,7 +63,12 @@ class App extends Component {
             <Nav pullRight>
               {
                 this.state.isAuthenticated ?
-                  <NavItem onClick={this.handleLogout}>Logout</NavItem>
+                  <Fragment>
+                    <LinkContainer to="/settings">
+                      <NavItem>Settings</NavItem>
+                    </LinkContainer>
+                    <NavItem onClick={this.handleLogout}>Logout</NavItem>
+                  </Fragment>
                   :
                   <Fragment>
                     <LinkContainer to="/signup">

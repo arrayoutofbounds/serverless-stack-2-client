@@ -9,6 +9,7 @@ import NewNote from "./containers/NewNote";
 import Notes from "./containers/Notes";
 import AuthenticatedRoute from "./components/AuthenticatedRoute";
 import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
+import Settings from "./containers/Settings";
 
 export default ({ childProps }) =>
   <Switch>
@@ -16,7 +17,8 @@ export default ({ childProps }) =>
 
     <UnauthenticatedRoute path="/login" exact component={Login} props={childProps} />
     <UnauthenticatedRoute path="/signup" exact component={Signup} props={childProps} />
-    
+
+    <AuthenticatedRoute path="/settings" exact component={Settings} props={childProps} /> 
     <AuthenticatedRoute path="/notes/new" exact component={NewNote} props={childProps} />
     <AuthenticatedRoute path="/notes/:id" exact component={Notes} props={childProps} />
 
